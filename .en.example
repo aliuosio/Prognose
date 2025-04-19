@@ -1,0 +1,13 @@
+NAMESPACE=pr
+PY_VERSION=3.13.3-slim-bookworm
+POSTGRES_VERSION=16.8-alpine3.21
+POSTGRES_DB=pad
+POSTGRES_HOST=postgres
+POSTGRES_PORT=5432
+POSTGRES_TABLE=coins
+POSTGRES_ANALYSIS_TABLE=analyse_technical
+POSTGRES_SOCIAL_TABLE=analyse_social
+POSTGRES_USER=qdqwdqwdq
+POSTGRES_PASSWORD="wdwedqwdqwdqwdwqdq"
+
+TZ=Europe/Berlin
