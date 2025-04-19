@@ -1,0 +1,29 @@
+services:
+        
+  python:
+    build:
+      context: ./.docker/python
+      args:
+        PY_VERSION: ${PY_VERSION}
+    container_name: ${NAMESPACE}_python
+    image: osioaliu/python:${PY_VERSION}
+    tty: true
+    init: true
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    env_file:
+      - .env
+    working_dir: /src
+    environment:
+      - PYTHONPATH=/src
+    command: >
+      /bin/bash -c "
+        pip install --upgrade pip &&
+        pip install -r requirements.txt &&
+        tail -f /dev/null
+      "
+    volumes:
+      - ./src:/src
+
+volumes:
+  pg_data:
